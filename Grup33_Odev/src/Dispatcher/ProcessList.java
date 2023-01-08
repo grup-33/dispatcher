@@ -15,7 +15,7 @@ import java.util.Iterator;
 
 public class ProcessList {
 
-	public List<ProcessManagement> processes = new ArrayList<ProcessManagement>();
+	public List<ProcessManagement> processes = new ArrayList<ProcessManagement>();//Dosyadan okunan proseslerin tutulacaðý bir proses listesi oluþturulur
 
 	public ProcessList() throws IOException{
 		int id = 0;
@@ -26,10 +26,10 @@ public class ProcessList {
 		
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
 		
-		while ((line = bufferedReader.readLine())!= null) {
+		while ((line = bufferedReader.readLine())!= null) {//dosyayý satýr satýr okur
 			String[] array= line.split(", ");
 			
-			for (int i=0;i<array.length;i++) {
+			for (int i=0;i<array.length;i++) {//Okunan dosyadaki bilgileri prosesin ilgili deðerlerine atar
 				ProcessManagement p = new ProcessManagement();
 				p.id = id++;
 				p.arrivalTime = Integer.parseInt(array[i]);
